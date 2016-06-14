@@ -11,9 +11,9 @@ Enemy.prototype.constructor = Enemy;
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    var x = getRandomArbitrary(-100, 0);
-    var y = getRandomArbitrary(50, 250);
-    var speed = getRandomArbitrary(1, 100);
+    var x = getRandomNumber(-100, 0);
+    var y = getRandomNumber(50, 250);
+    var speed = getRandomNumber(1, 100);
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -36,8 +36,8 @@ Enemy.prototype.update = function(dt) {
 };
 
 Enemy.prototype.reset = function() {
-    var x = getRandomArbitrary(-100, 0);
-    var y = getRandomArbitrary(50, 250);
+    var x = getRandomNumber(-100, 0);
+    var y = getRandomNumber(50, 250);
     this.x = x;
     this.y = y;
 };
@@ -169,7 +169,7 @@ Player.prototype.handleInput = function(key) {
 var player = new Player();
 
 // Returns a random number between min (inclusive) and max (exclusive)
-function getRandomArbitrary(min, max) {
+function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

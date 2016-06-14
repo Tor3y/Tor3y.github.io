@@ -1,19 +1,19 @@
 // Create superclass 
-var Player = function() {
+var Character = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-/* setting inheritance */
-var Enemy = Object.create(Player);
+//setting inheritance
+var Enemy = Object.create(Character);
 Enemy.prototype.constructor = Enemy;
 
-// Enemies 
+// Enemies players must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    var x = getNumber(-100, 0);
-    var y = getNumber(50, 250);
-    var speed = getNumber(1, 100);
+    var x = getRandomArbitrary(-100, 0);
+    var y = getRandomArbitrary(50, 250);
+    var speed = getRandomArbitrary(1, 100);
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -36,16 +36,45 @@ Enemy.prototype.update = function(dt) {
 };
 
 Enemy.prototype.reset = function() {
-    var x = getNumber(-100, 0);
-    var y = getNumber(50, 250);
+    var x = getRandomArbitrary(-100, 0);
+    var y = getRandomArbitrary(50, 250);
     this.x = x;
     this.y = y;
 };
 
-// Draw the enemy on the screen, required method for game
+// Draw the enemy on the screen
 Enemy.prototype.render = function() {
     Character.call(this);
 };
+
+
+
+// Write winner class to add win feedback
+var Winner = function() {
+    this.x = 205;
+    this.y = 300;
+};
+
+
+Winner.prototype.render = function() {
+    Character.call(this);
+};
+
+// Create a new Winner object instance
+var winner = new Winner();
+
+// Create show method for Winner class
+Winner.prototype.show = function() {
+    var doneStatus = false;
+    if (!doneStatus) {
+        setTimeout(function() {
+            winner.x = 125;
+            winner.y = 250;
+        }, 1000);
+        doneStatus = true;
+    }
+};
+
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -80,22 +109,22 @@ Player.prototype.update = function(dt) {
     // Run checkCollisions function
     this.checkCollisions(allEnemies);
 
-    // If player reaches water reset game	
+    // If player hits ocean, pause and then reset position  
     if (this.y <= 87) {
         setTimeout(function() {
             self.reset();
-        }, 1000);
+        }, 1500);
         winner.show();
         setTimeout(function() {
             winner.x = -2005;
             winner.y = -3000;
-        }, 1500);
+        }, 2500);
     }
 };
 
-// Draw player
+// Draw the player on the screen
 Player.prototype.render = function() {
-    Player.call(this);
+    Character.call(this);
 };
 
 // Advance player one square based on key
@@ -139,8 +168,8 @@ Player.prototype.handleInput = function(key) {
 // Place the player object in a variable called player
 var player = new Player();
 
-// Returns a random number
-function getNumber(min, max) {
+// Returns a random number between min (inclusive) and max (exclusive)
+function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

@@ -11,7 +11,7 @@ $ cd udacityArcadeGame
 ```
 ## Objective
 
-Navigate your player accross the street while avoiding contact for evil bugs. 
+Navigate your player accross the street while avoiding contact with evil bugs. 
 
 ## Controls 
 

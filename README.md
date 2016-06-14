@@ -1,6 +1,18 @@
-frontend-nanodegree-arcade-game
-===============================
+# Road Crossing 
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission.
+Road crossing is a frogger style game where the player is attempting to cross the road to reach the water without coming into contact with the evil giant bugs
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Instillation 
+
+Clone the GitHub repository
+```
+$ git clone https://github.com/Tor3y/udacityArcadeGame.git
+$ cd udacityArcadeGame
+```
+## Objective
+
+Navigate your player accross the street while avoiding contact for evil bugs. 
+
+## Controls 
+
+Use the arrow keys to navigate your player around the board

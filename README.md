@@ -6,8 +6,8 @@ Road crossing is a frogger style game where the player is attempting to cross th
 
 Clone the GitHub repository
 ```
-$ git clone https://github.com/Tor3y/udacityArcadeGame.git
-$ cd udacityArcadeGame
+$ git clone https://github.com/Tor3y/ArcadeGame.git
+$ cd ArcadeGame
 ```
 ## Objective
 

@@ -1,3 +1,14 @@
 body {
     text-align: center;
 }
+
+header {
+	font-family: 'Alfa Slab One', cursive;
+	font-size: 4em;
+	padding-top: .5em;
+}
+
+footer {
+	font-family: 'Amatic SC', cursive;
+	font-size: 2em;
+}
